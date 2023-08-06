@@ -1,0 +1,30 @@
+
+{% extends 'afterlogin.html' %}
+
+{% block title%}
+Contact{% endblock title %}
+
+{% block body%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'contact.css' %}">
+<div class="container-fluid my-4">
+<div class="contact-us">
+  <form action="{% url 'contact' %}" method="POST" >
+    {%csrf_token%}
+    <label for="customerName">NAME <em>&#x2a;</em></label>
+    <input id="name" name="name" required="" type="text" />
+    <label for="email">EMAIL <em>&#x2a;</em></label>
+    <input id="email" name="email" required="" type="email" />
+    <label for="phone">PHONE</label><input id="phone" name="phone"  />
+    <label for="orderNumber">ORDER NUMBER</label>
+    <input id="orderNumber" name="orderNumber" type="text" />
+    <label for="customerNote">YOUR MESSAGE <em>&#x2a;</em>
+    </label><textarea id="customerNote" name="customerNote" required="" rows="4"></textarea>
+    <h3>
+      Please provide all the information about your issue you can.
+    </h3>
+    <label for="spamProtection">SPAM PROTECTION <em>&#x2a; </em><span>&nbsp;&nbsp;&nbsp;&nbsp;What day comes before July 11th?</span></label><input id="spamProtection" name="spamProtection" type="text" /><button id="customerOrder">SUBMIT</button>
+  </form>
+</div>
+      </div>
+{% endblock body%}

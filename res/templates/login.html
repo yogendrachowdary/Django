@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title%}
+LogIn
+{% endblock title %}
+
+{% block body%}
+{% load static %}
+{% if messages %}
+    {% for message in messages %}
+
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0 " role="alert">
+{{ message }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    {% endfor %}
+
+{% endif %}
+
+<link rel="stylesheet" href="{% static 'login.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+<form action="{% url 'login' %}" method="POST" >
+    {% csrf_token %}
+  <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="loginusername" name="loginusername" placeholder="Enter your username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="Password" id="loginpassword" name="loginpassword" placeholder="Enter your password" required>
+      </div>
+          <div class="g-recaptcha" data-sitekey="6Lf4TuolAAAAAMb6bJ1rZTPK5pGtmGOqRAqpBaCf"></div>
+
+      <button type="submit">Login</button>
+
+
+              <a href="/register">  <center>don't have an Account? REGISTER</center></a>
+
+    </form>
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  </div>
+</body>
+</html>
+
+
+
+{% endblock body%}
+

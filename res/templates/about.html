@@ -1,0 +1,59 @@
+
+{% extends 'afterlogin.html' %}
+
+{% block title%}
+About
+{% endblock title %}
+
+{% block body%}
+{%load static%}
+
+<link rel="stylesheet" href="{% static 'about.css' %}">
+
+
+<div class="about-section">
+  <h1>About Us</h1>
+
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="/static/images/manoj.jpg" alt="Jane" style="width:100%">
+      <div class="container">
+        <h2>Manoj Teja Patcha</h2>
+        <p class="title">Developer1</p>
+        <p>manoj@gmail.com</p>
+              <center>  <a class="btn btn-primary" href="https://www.linkedin.com/in/manoj-teja-patcha-3b211b226/" role="button">View Profile</a></center>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/static/images/yoge.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Yogendra Chowdary</h2>
+        <p class="title">Developer2</p>
+        <p>yogendra@gmail.com</p>
+                <a class="btn btn-primary" href="https://www.linkedin.com/in/yogendra-chowdary-ab37a4248/" role="button">View Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="/static/images/aakib.jpg" alt="John" style="width:100%">
+      <div class="container">
+        <h2>Aakib Ali</h2>
+        <p class="title">Developer3</p>
+        <p>ali@gmail.com</p>
+                <a class="btn btn-primary" href="https://www.linkedin.com/in/aakib-ali-a34509246/" role="button">View Profile</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body%}
